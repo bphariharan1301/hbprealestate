@@ -35,9 +35,9 @@ SECRET_KEY = '#&2i8!j66fjr$axq8$fo)esvbehio9e-bs=pyu8j$g1w#byzvo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 env.read_env(env.str('./', '.env'))
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'hbprealestate.herokuapp.com']
 
 
 # Application definition

@@ -31,13 +31,15 @@ env = environ.Env()
 # reading .env file
 env.read_env(env.str('./', '.env'))
 
-SECRET_KEY = '#&2i8!j66fjr$axq8$fo)esvbehio9e-bs=pyu8j$g1w#byzvo'
+SECRET_KEY = <>
 
 # SECURITY WARNING: don't run with debug turned on in production!
 env.read_env(env.str('./', '.env'))
-DEBUG = True
+DEBUG = <>
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'hbprealestate.herokuapp.com']
+ALLOWED_HOSTS = [
+        'your.domain.com'
+]
 
 
 # Application definition
@@ -93,12 +95,12 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'realestate',
-        'USER':'hbp',
-        'PASSWORD':'AAd!tyAA$ravi',
-        'HOST':'localhost',
-        'PORT':'3306'
+        'ENGINE': <>,
+        'NAME': '<>',
+        'USER':'<>',
+        'PASSWORD':'<>',
+        'HOST':'<>',
+        'PORT':'<>'
     }
 }
 
@@ -163,10 +165,10 @@ except ImportError:
     pass
 
 EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_HOST_USER='bphariharan1301@gmail.com'
-EMAIL_HOST_PASSWORD='vqkxtizishalzrmi'
-EMAIL_USE_TLS=True
+EMAIL_PORT=<>
+EMAIL_HOST_USER='<>'
+EMAIL_HOST_PASSWORD='<>'
+EMAIL_USE_TLS=<>
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url

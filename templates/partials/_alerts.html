@@ -7,11 +7,7 @@
           {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
             Error: 
           {% else %}
-            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-              Success:
-            {% else %}
-              {{ message.tags|title }}
-            {% endif %}
+            {{ message.tags|title }}
           {% endif %}
         </strong>
         {{ message }}

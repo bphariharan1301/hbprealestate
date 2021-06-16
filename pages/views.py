@@ -6,7 +6,7 @@ from listings.models import Listing
 from realtors.models import Realtor
 
 def index(request):
-    listings = Listing.objects.order_by('-list_date')[:3]
+    listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
 
     context = {
         'listings': listings,

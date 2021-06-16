@@ -2,7 +2,7 @@
 
 {% load humanize %}
 
-{% block title %}  Search Results {% endblock %}
+{% block title %} | Search Results {% endblock %}
 
 {% block content %}
 <section id="showcase-inner" class="showcase-search text-white py-5">
@@ -27,12 +27,12 @@
                 <select name="state" class="form-control">
                   <option selected="true" disabled="disabled">State (All)</option>
                   {% for key,value in state_choices.items %}
-                  <option value="{{ key }}" 
-                  {% if key == values.state %}
-                    selected
-                  {% endif %}
-                  >{{ value }}</option>
-                  {% endfor %}
+                      <option value="{{ key }}" 
+                      {% if key == values.state %}
+                        selected
+                      {% endif %}
+                      >{{ value }}</option>
+                    {% endfor %}
                 </select>
               </div>
             </div>
@@ -43,28 +43,28 @@
                 <select name="bedrooms" class="form-control">
                   <option selected="true" disabled="disabled">Bedrooms (Any)</option>
                   {% for key,value in bedroom_choices.items %}
-                  <option value="{{ key }}" 
-                  {% if key == values.bedroom %}
-                    selected
-                  {% endif %}
-                  >{{ value }}</option>
-                  {% endfor %}
+                      <option value="{{ key }}"
+                      {% if key == values.bedrooms %}
+                        selected
+                      {% endif %}
+                      >{{ value }}</option>
+                    {% endfor %}
                 </select>
               </div>
               <div class="col-md-6 mb-3">
                 <select name="price" class="form-control">
                   <option selected="true" disabled="disabled">Max Price (All)</option>
                   {% for key,value in price_choices.items %}
-                  <option value="{{ key }}" 
-                  {% if key == values.price %}
-                    selected
-                  {% endif %}
-                  >{{ value }}</option>
-                  {% endfor %}
+                      <option value="{{ key }}"
+                      {% if key == values.price %}
+                        selected
+                      {% endif %}
+                      >{{ value }}</option>
+                    {% endfor %}
                 </select>
               </div>
             </div>
-            <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button>
+           <button class="btn  btn-block mt-4" type="submit" style="background-color: rgb(55 48 163);">Submit form</button>
           </form>
         </div>
       </div>
@@ -100,7 +100,7 @@
                 <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
                 <div class="card-img-overlay">
                   <h2>
-                    <span class="badge badge-secondary text-white">{{ listing.price}} INR </span>
+                    <span class="badge badge-secondary text-white">${{ listing.price | intcomma }}</span>
                   </h2>
                 </div>
                 <div class="card-body">

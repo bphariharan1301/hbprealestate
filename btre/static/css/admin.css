@@ -13,6 +13,10 @@ a:visited {
   color: #fff;
 }
 
+a:link {
+  color: black;
+}
+
 div.breadcrumbs {
   background: #30caa0;
   color: #fff;

@@ -37,12 +37,24 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="{% url 'index' %}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+            {% if '/' == request.path %}
+              <a href="{% url 'index' %}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+              <!-- <a href="{% url 'index' %}" class="text-white px-3 py-2 text-sm font-medium" aria-current="page">Home</a> -->
+            {% else %}
+              <a href="{% url 'index' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            {% endif %}
+            
+            {% if 'about' in request.path %}
+              <a href="{% url 'about' %}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">About</a>
+            {% else %}
+              <a href="{% url 'about' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">About</a>
+            {% endif %}
 
-            <a href="{% url 'about' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-
-            <a href="{% url 'listings' %}"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Featured Listings</a>
+            {% if 'listings' in request.path %}
+              <a href="{% url 'listings' %}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Featured Listings</a>
+            {% else %}
+              <a href="{% url 'listings' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Featured Listings</a>
+            {% endif %}
 
 
           </div>
@@ -52,7 +64,7 @@
          {% if user.is_authenticated %}
             <li
             {% if 'dashboard' in request.path %}
-              class="nav-item active mr-3"
+              class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"
             {% else %}
               class="nav-item mr-3"
             {% endif %}
@@ -72,13 +84,24 @@
           {% else %}
             <li
             {% if 'register' in request.path %}
-              class="nav-item active mr-3"
+              class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" style="display: block;"
             {% else %}
-              class="nav-item mr-3"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="display: block;"
             {% endif %}
             >
-        <a href="{% url 'register' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
-        <a href="{% url 'login' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+              <a href="{% url 'register' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+            </li>
+
+            <li
+                {% if 'login' in request.path %}
+                  class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" style="display: block;"
+                {% else %}
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="display: block;"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium" style="display: block;"
+                {% endif %}
+            >
+              <a href="{% url 'login' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+            </li>
          {% endif %}
       </div>
     </div>

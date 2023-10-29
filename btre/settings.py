@@ -81,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'btre.wsgi.application'
+WSGI_APPLICATION = 'btre.wsgi.app'
 
 
 # Database
@@ -91,8 +91,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'realestate',
-        'USER': 'postgres',
-        'PASSWORD': 'AAd!tyAA$ravi',
+        'USER': 'techboizs',
+        'PASSWORD': 'AAd!tyAA',
         'HOST': 'localhost',
         'PORT': '5432',
 

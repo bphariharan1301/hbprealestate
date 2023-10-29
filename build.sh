@@ -1,5 +1,5 @@
-echo "Upgrading pip"
-python3 -m pip install --upgrade pip
+# echo "Upgrading pip"
+# python3 -m pip install --upgrade pip
 
 echo "Building the project..."
 python3 -m pip install -r requirements.txt

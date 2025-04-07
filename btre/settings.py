@@ -28,12 +28,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'ubsq#xai!qa_!dsi=61a&mbqn)lxtl*x48$fi0v-l^k%0z1^bn'
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'ubsq#xai!qa_!dsi=61a&mbqn)lxtl*x48$fi0v-l^k%0z1^bn'
+# SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = os.getenv('DEBUG')
+DEBUG = True
+# DEBUG = os.getenv('DEBUG')
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'real-estate-deploy.herokuapp.com', 'hbprealestate.herokuapp.com']
 ALLOWED_HOSTS = ['*']
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'realestate',
@@ -102,23 +102,7 @@ WSGI_APPLICATION = 'btre.wsgi.application'
         'PORT': '5432',
 
     }
-}'''
-
-
-DATABASES = {
-  "default":{
-
-  }
 }
-
-DATABASES["default"] = dj_database_url.config(
-  default=os.environ.get("PG_URL"), conn_max_age=600, ssl_require=False
-)
-
-
-
-
-# postgres://realestateproject2910:iCOGk75xupBU@ep-muddy-bush-52278062.us-east-2.aws.neon.tech/realestate
 
 
 # Password validation
